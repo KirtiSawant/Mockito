@@ -39,7 +39,7 @@ public class BookServiceTest {
     @Test
     public void TestArgumentMatchersBook(){
         Book book=new Book("1234","Mockito",300, LocalDate.now());
-        when(bookRepository.findBookByTitleAndPriceAndIsDigital("Mockito",300,true)).thenReturn(book);
+        when(bookRepository.findBookByTitleAndPriceAndIsDigital(anyString(),anyInt(),anyBoolean())).thenReturn(book);
         Book actualBook=bookService.getBookByTitleAndPriceAndIsDigital("Mockito",300,true);
         assertEquals("Mockito",actualBook.getTitle());
 
